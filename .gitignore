@@ -1,0 +1,13 @@
+ATU_Reporter/
+target/
+test-output/
+src/test/java/TestData/
+.classpath
+src/test/java/sample
+BatFiles/
+.settings
+.project
+src/test/java/testCases/Demo.java
+AAtestng_govind.xml
+src/test/java/custom_test_report/
+
