@@ -1,0 +1,109 @@
+#Declaring objects with css and xpath locators
+@objects
+  
+  contact_us_hero_img_desktop xpath //*[@alt='contactusspotlight']//ancestor::div[1]
+  contact_us_hero_img_mobile  xpath //*[@alt='contactusspotlight']//ancestor::div[2]
+  hero_img_text xpath (//*[@alt='contactusspotlight']//following::h2)[1]
+  contact_us_testimonial_section  xpath (//*[@class='headquaters-heading']//preceding::div[position()=1]//parent::div)[position()=1]
+  contact_us_testimonial_heading  xpath //*[@class='headquaters-heading']//child::h2
+  contact_us_testimonial_time  xpath //*[@class='time']//child::span
+  contact_us_testimonial_address  xpath //*[@class='address']//child::span
+  contact_us_testimonial_telephone  xpath (//*[@class='tel']//child::a)[position()=1]
+  contact_us_testimonial_address  xpath //*[@class='address']//child::span
+  contact_us_testimonial_send_a_message_button  xpath //*[@class='explore-btn']//child::a
+  contact_us_testimonial_image_desktop  xpath //*[contains(@src,'contactusheadquarter.jpg')]
+  contact_us_testimonial_image_mobile  xpath //*[contains(@src,'contactusheadquarter.jpg')]
+  contact_us_testimonial_view_on_map_link  xpath //*[@class='view-map']//child::a
+  
+= Journey So Far 1995 company images Section Desktop =
+  #This is for Desktop
+	@on desktop
+      contact_us_testimonial_section:
+        width 1166 px
+        height 456 px
+        inside screen 83px left
+        inside screen 84px right
+      contact_us_testimonial_heading:
+        css font-size is "34px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        text is "Majid Al Futtaim Headquarters"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_time:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+        text is "Sunday - Thursday, 8 am - 5.30 pm | Closed on public holidays"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_address:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+        text singleline is "Tower 1, 10th Floor, City Centre Deira Complex PO Box 91100, Dubai, United Arab Emirates"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_telephone:
+        css font-size is "20px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        text is "+9714 2949999"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_send_a_message_button:
+        width 227 px
+        height 52 px
+        css font-size is "18px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        text is "Send A Message"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_view_on_map_link:
+        css font-size is "11px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        text is "VIEW ON MAP"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_image_desktop:
+        width 476 px
+        height 431 px
+        inside contact_us_testimonial_section
+= Journey So Far 1995 company images Section Mobile =
+  #This is for Mobile
+	@on mobile
+	  contact_us_testimonial_section:
+        width 408 px
+        height 917 px
+        inside screen 20px left
+        inside screen 20px right
+      contact_us_testimonial_heading:
+        css font-size is "28px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        text is "Majid Al Futtaim Headquarters"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_time:
+        css font-size is "14px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+        text is "Sunday - Thursday, 8 am - 5.30 pm | Closed on public holidays"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_address:
+        css font-size is "14px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+        text singleline is "Tower 1, 10th Floor, City Centre Deira Complex PO Box 91100, Dubai, United Arab Emirates"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_telephone:
+        css font-size is "20px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        text is "+9714 2949999"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_send_a_message_button:
+        width 368 px
+        height 50 px
+        css font-size is "11px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        text is "Send A Message"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_view_on_map_link:
+        css font-size is "11px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        text is "VIEW ON MAP"
+        inside contact_us_testimonial_section
+      contact_us_testimonial_image_mobile:
+        width 408 px
+        height 369 px
+        inside contact_us_testimonial_section
+
+   
+
+			

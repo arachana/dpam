@@ -1,0 +1,88 @@
+#Declaring objects with css and xpath locators
+@objects
+  
+  grid_listing_container-*	xpath	//*[@class='brand-family-image']
+  grid_images_heading-*	xpath	//*[contains(@class,'brand-family-content')]//child::h3 
+  grid_images_para-*	xpath	//*[@class='grid-compontent ']//child::p
+  grid_images_cta_button-*	xpath	(//*[@class='explore-btn']//child::a)[position()>1 and position()<4]
+
+@groups
+	menu_bar_links	who_we_are_link,what_we_do_link,people_and_careers,the_leadership_institute,investor_relations,media_centre
+@script
+	grid_images_heading_text = ["Our Industries", "Our Brand Family"];
+	grid_images_cta_button_text = ["Learn More", "Explore Brands"];
+	grid_images_cta_button_text_mobile = ["Learn More", "Explore Brands"];
+
+
+#Home Page Tag
+= Who We are Grid Listing desktop =
+  #This is for Desktop
+	@on desktop
+		@forEach [grid_listing_container-*] as item, index as i
+			${item}:
+				width 666 to 667 px 
+				height 361 px
+		#grid_images_heading-*:
+		@forEach [grid_images_heading-*] as item, index as i
+			${item}:
+				text is "${grid_images_heading_text[i-1]}"
+				css font-size is "40px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+				#inside grid_listing_container-i
+		grid_images_heading-1:
+			inside grid_listing_container-1
+			aligned horizontally all grid_images_heading-2 
+		grid_images_heading-2:
+			inside grid_listing_container-2		
+		#grid_images_cta_button-*:
+		@forEach [grid_images_cta_button-*] as item, index as i
+			${item}:
+				#width 181 px
+				height 52 px
+				text is "${grid_images_cta_button_text[i-1]}"
+				css font-size is "18px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+				#aligned horizontally all grid_images_cta_button-2
+		grid_images_cta_button-1:
+			inside grid_listing_container-1
+			aligned horizontally all grid_images_cta_button-2
+		grid_images_cta_button-2:
+			inside grid_listing_container-2
+		grid_listing_container-*:
+			count any grid_listing_container-* is 2 
+
+	
+   
+	@on mobile
+		@forEach [grid_listing_container-*] as item, index as i
+			${item}:
+				width 448 px 
+				height 243 px 
+		grid_images_mobile-*:
+		@forEach [grid_images_heading-*] as item, index as i
+			${item}:
+				text is "${grid_images_heading_text[i-1]}"
+				css font-size is "36px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+				#inside grid_listing_container
+		grid_images_heading-1:
+			inside grid_listing_container-1
+			aligned vertically left grid_images_heading-2
+		grid_images_heading-2:
+			inside grid_listing_container-2
+		@forEach [grid_images_cta_button-*] as item, index as i
+			${item}:
+				text is "${grid_images_cta_button_text_mobile[i-1]}"
+				css font-size is "11px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+				#inside grid_listing_container
+		grid_images_cta_button-1:
+			inside grid_listing_container-1
+			aligned vertically all grid_images_cta_button-2
+		grid_images_mobile-*:
+			count any grid_listing_container-* is 2
+
+		
+       
+
+			

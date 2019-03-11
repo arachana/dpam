@@ -1,0 +1,40 @@
+#Declaring objects with css and xpath locators
+@objects
+ 
+  footer_logo		xpath		(//*[@alt='Majid Al Futtaim'])[2]
+  footer		xpath		//*[@class='footer-content']//ancestor::footer
+  
+
+
+
+#Home Page Tag
+= Home Page =
+  #This is for Desktop
+	@on desktop
+       
+		#Footer properties
+		footer:
+			inside screen 0px bottom
+			inside screen 0px left
+			inside screen 0px right
+			width 1340 to 1350 px 
+			height 363 px
+		footer_logo:
+		    inside footer
+			image file maf_footer_logo_desktop.png, error %5
+   
+	@on mobile
+		
+		#Footer properties
+		footer:
+			inside screen 1px bottom
+			inside screen 0px left
+			inside screen 0px right
+			width 450 to 455 px 
+			height 740 to 750 px
+		footer_logo:
+		    inside footer
+			image file maf_footer_logo_mobile.png, error %5
+       
+
+			

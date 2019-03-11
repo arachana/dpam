@@ -1,0 +1,6 @@
+@import footer.gspec
+#Declaring objects with css and xpath locators
+@objects
+  
+
+			

@@ -1,0 +1,76 @@
+#Declaring objects with css and xpath locators
+@objects
+  home_people_and_careers_img_desktop	xpath	//*[contains(@src,'homepage_peoples_and_careers.jpg')]
+  home_people_and_careers_img_mobile	xpath	//*[contains(@src,'homepage_peoples_and_careers.jpg')]
+  people_and_careers_section_header_lbl		xpath	//*[@class='section-heading']//child::*[text()='Talent Focussed']
+  people_and_careers_para	xpath	(//*[@class='bullet-points-section'])[2]
+  people_and_careers_explore_button	xpath	(//*[text()='Explore More'])[1]
+  people_and_careers_explore_button2	xpath	(//*[text()='Explore More'])[2]
+  people_and_careers_section_lbl	xpath	//*[@class='section-name']//*[text()='People & Careers']
+  home_people_and_careers_main_img	xpath	//*[contains(@src,'homepage_leadership_institute.jpg')]
+  home_people_and_careers_main_img_content_para	xpath	(//span[text()='The Leadership Institute'])[position()=2]//following::p[position()=1]
+
+= Home Who We Are Section =
+  #This is for Desktop
+	@on desktop
+    	people_and_careers_para:
+			#text singleline is "At our core, we are a values-led organisation that is bold, passionate and together in all that we do – underpinned by a culture that is inspired by a dynamic, entrepreneurial spirit."
+			css font-size is "16px"
+			css font-family matches ".*DIN-Alternate, sans-serif*" 
+		home_people_and_careers_img_desktop:
+			#image file home_people_and_careers_section_desktop.png, error 4000
+			width 454 px
+			height 580 px
+		people_and_careers_section_header_lbl:
+			css font-size is "80px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		people_and_careers_explore_button:
+			aligned vertically left people_and_careers_section_header_lbl
+			width 199 px 
+            height 52 px
+            css font-size is "18px"
+            css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        people_and_careers_explore_button2:
+			aligned vertically left home_people_and_careers_main_img_content_para
+			width 199 px 
+            height 52 px
+            css font-size is "18px"
+            css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        people_and_careers_section_lbl:
+        	aligned vertically left people_and_careers_section_header_lbl
+        	css font-size is "16px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_people_and_careers_main_img:
+			below home_people_and_careers_img_desktop 141 px
+			#image file home_people_and_careers_main_img.png, error %5
+			width 1333 px
+			height 608 px
+		home_people_and_careers_main_img_content_para:
+			#text singleline is "The Leadership Institute provides innovative and hands-on development programs through partnerships with leading experts and global faculty – Fostering an environment of empowerment and growth." 
+			inside home_people_and_careers_main_img
+			css font-size is "16px"
+			css font-family matches ".*DIN-Alternate, sans-serif*"
+= Home Who We Are Section =
+  #This is for Mobile
+	@on mobile
+    	home_people_and_careers_main_img_content_para:
+			#text singleline is "The Leadership Institute provides innovative and hands-on development programs through partnerships with leading experts and global faculty - Fostering an environment of empowerment and growth."
+			css font-size is "14px"
+			css font-family matches ".*DIN-Alternate, sans-serif*"
+		home_people_and_careers_img_mobile:
+			#image file home_people_and_careers_section_mobile.png, error 500px
+			width 408 px
+			height 522 px 
+		people_and_careers_section_header_lbl:
+			css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		people_and_careers_explore_button:
+			aligned vertically left people_and_careers_section_header_lbl
+			width 408 px 
+            height 52 px
+        people_and_careers_section_lbl:
+        	aligned vertically left people_and_careers_section_header_lbl
+        	css font-size is "12px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_people_and_careers_main_img:
+			#absent

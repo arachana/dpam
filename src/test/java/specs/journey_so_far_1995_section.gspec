@@ -1,0 +1,61 @@
+#Declaring objects with css and xpath locators
+@objects
+  journey_so_far_1995_section xpath //*[@data-section-name='1995']
+  journey_so_far_1995_lbl-* xpath (//*[@class='lines']//child::span)[position()<5]
+  journey_so_far_1995_para1 xpath (//*[@data-section-name='1995']//following::p)[position()=2]
+  journey_so_far_1995_para2 xpath (//*[@data-section-name='1995']//following::p)[position()=3]
+  journey_so_far_1995_message xpath (//*[@data-section-name='1995']//following::p)[position()=4]//parent::div
+  journey_so_far_1995_maf_text xpath (//*[@data-section-name='1995']//following::p)[position()=5]
+  journey_so_far_1995_founder_text xpath //*[text()='Founder']
+= Journey So Far 1995 Section Desktop =
+  #This is for Desktop
+	@on desktop
+      journey_so_far_1995_section:
+        width 1333 px
+        height 1952 px
+      journey_so_far_1995_para1:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_1995_para2:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_1995_message:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_1995_maf_text:
+        css font-size is "20px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_1995_founder_text:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+
+
+      #@forEach [journey_so_far_1995_lbl-*] as item, index as i
+          #${item}:
+              #text is "${1995_text[i-1]}"
+              #css font-size is "20px"
+              #css font-family matches ".*MarselisPro-Bold, sans-serif*"
+
+= Journey So Far 1995 Section Mobile =
+  #This is for Mobile
+	@on mobile
+	  journey_so_far_1995_lbl-*:
+        css font-size is "52px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+	  journey_so_far_1995_para1:
+        css font-size is "14px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_1995_para2:
+        css font-size is "14px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_1995_message:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_1995_maf_text:
+        css font-size is "20px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_1995_founder_text:
+        css font-size is "13px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"    
+
+			

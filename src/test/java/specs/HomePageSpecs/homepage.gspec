@@ -1,0 +1,62 @@
+@import header.gspec
+@import footer.gspec
+#Declaring objects with css and xpath locators
+@objects
+  
+  menu_icon_mobile				xpath		//*[@class='menu-icon']
+  video_container				xpath	(//*[@class='bg-video'])[1]
+  clock_container				xpath	//*[@class='di-main']  
+  home_page_logo              xpath     (//*[@alt='Majid Al Futtaim'])[1]
+  menu_bar			xpath		//*[@class='header-nav-menu']
+  menu_bar_items-*		xpath		//*[@class='menu-item ']
+ 
+
+@groups
+	menu_bar_links	who_we_are_link,what_we_do_link,people_and_careers,the_leadership_institute,investor_relations,media_centre
+
+
+#Home Page Tag
+= Home Page =
+  #This is for Desktop
+	@on desktop
+      
+		menu_icon_mobile:
+			absent
+	
+		menu_bar:
+			width 900 to 910 px 
+			height 70 to 80 px
+			below header 0px
+	    video_container:
+			width 1333 px 
+			height 667 px 
+		clock_container:
+			inside	video_container
+			width 466 px
+			height 473 px 
+		#Logo properties
+		home_page_logo:
+            width 165px 
+			height 33px 
+			below header 15px
+			image file maf_logo_desktop.png, error %5
+			left-of menu_bar 96 px
+	
+   
+	@on mobile
+		
+		video_container:
+			width 450 to 455 px 
+			height 220 to 230 px 
+		clock_container:
+			width 450 to 455 px 
+			height 450 to 455 px 
+		#Logo properties
+		home_page_logo:
+			image file maf_logo_mobile.png, error %5
+			aligned horizontally bottom header_search_icon_mobile 5px
+			aligned horizontally bottom menu_icon_mobile 5px
+		
+       
+
+			

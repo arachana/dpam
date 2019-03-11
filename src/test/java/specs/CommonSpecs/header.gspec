@@ -1,0 +1,37 @@
+#Declaring objects with css and xpath locators
+@objects
+  header				xpath	//*[@class='top-header-menu']
+  header_search_icon_desktop			xpath    //*[@class='top-header-links']//following::img[position()=1 and @alt='search icon']
+  header_search_icon_mobile			xpath		(//*[@alt='search icon'])[3]
+  header_contact_us			xpath    (//*[text()='Contact Us'])[2]
+  header_small_text			xpath   //*[text()='Contact Us']//following::*[@class='small-text']
+  header_items-*			xpath    //*[@class='top-header-links']//child::a
+
+
+#Home Page Tag
+= Home Page =
+  #This is for Desktop
+	@on desktop
+       #Header properties
+		header:
+			inside screen 0px top
+			inside screen 0px left
+			inside screen 0px right
+			width 1333 to 1350 px
+			height 31px
+		menu_icon_mobile:
+			absent
+		header_search_icon_desktop,header_items-*:
+			inside header
+	@on mobile
+		#Header properties
+		header:
+			absent
+		header_search_icon_mobile:
+			width 22 px 
+			height 21 px
+		header_search_icon_desktop:
+			absent
+		
+	
+       

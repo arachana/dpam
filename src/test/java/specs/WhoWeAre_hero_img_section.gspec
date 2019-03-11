@@ -1,0 +1,40 @@
+#Declaring objects with css and xpath locators
+@objects
+  who_we_are_hero_img_desktop	xpath	//*[contains(@src,'who_we_are_spolight_thumbnail.jpg')]
+  who_we_are_hero_img_mobile	xpath	//*[contains(@src,'who_we_are_spolight_thumbnail.jpg')]
+  hero_img_header_text xpath (//*[contains(@src,'who_we_are_spolight_thumbnail.jpg')]//following::h1)[1]
+  hero_img_para_text xpath (//*[contains(@src,'who_we_are_spolight_thumbnail.jpg')]//following::p)[1]
+
+= Who We Are Hero Image Section =
+  #This is for Desktop
+	@on desktop
+    	hero_img_para_text:
+			#text singleline is "As one of the region’s leading companies,representing many of the region’s best brands, we have a responsibility to make a positive impact on the communities and markets we operate in – socially, environmentally and financially."
+			css font-size is "20px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		inside who_we_are_hero_img_desktop
+		who_we_are_hero_img_desktop:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 1333 px 
+            height 608 px
+		hero_img_header_text:
+			text singleline is "Vision Driven" 
+			css font-size is "80px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside who_we_are_hero_img_desktop
+    		aligned vertically left hero_img_para_text
+= Who We Are Hero Image Section =
+  #This is for Mobile
+	@on mobile
+    	hero_img_para_text:
+    		absent
+		who_we_are_hero_img_mobile:
+			#image file home_who_we_are_section_mobile.png
+			width 448 px
+			height 795 px
+        hero_img_header_text:
+    		text singleline is "Vision Driven"
+    		css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside who_we_are_hero_img_mobile
+

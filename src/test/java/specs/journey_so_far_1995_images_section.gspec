@@ -1,0 +1,48 @@
+#Declaring objects with css and xpath locators
+@objects
+  
+  journey_so_far_1995_images-* xpath (//*[@class='company-icon']//img)[position()<4]
+  journey_so_far_1995_images_content-* xpath (//*[@class='company-desc'])[position()<4]
+  journey_so_far_1995_main_image_desktop  xpath //*[contains(@srcset,'whowearejourney1995')]//following-sibling::img
+  journey_so_far_1995_main_image_mobile  xpath //*[contains(@srcset,'whowearejourney1995')]//following-sibling::img
+  journey_so_far_1995_main_image_hading xpath //*[text()='Carrefour']
+  journey_so_far_1995_main_image_text_content xpath //*[text()='Carrefour']//following::span[position()=1]
+  
+= Journey So Far 1995 company images Section Desktop =
+  #This is for Desktop
+	@on desktop
+      journey_so_far_1995_images-*:
+        width 150 px
+        height 90 px
+      journey_so_far_1995_images_content-*:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_1995_main_image_desktop:
+        width 743 px
+        height 519 px
+      journey_so_far_1995_main_image_hading:
+        css font-size is "80px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_1995_main_image_text_content:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+= Journey So Far 1995 company images Section Mobile =
+  #This is for Mobile
+	@on mobile
+	  journey_so_far_1995_images-*:
+        width 150 px
+        height 90 px
+	  journey_so_far_1995_images_content-*:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_1995_main_image_mobile:
+        width 448 px
+        height 731 px
+      journey_so_far_1995_main_image_hading:
+        css font-size is "52px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_1995_main_image_text_content:
+        css font-size is "14px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"   
+
+			

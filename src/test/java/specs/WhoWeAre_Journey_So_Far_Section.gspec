@@ -1,0 +1,55 @@
+#Declaring objects with css and xpath locators
+@objects
+  who_we_are_Journey_So_Far_Image	xpath	//*[contains(@src,'who_we_are_the_journey_so_far.jpg')]
+  Journey_So_Far_Section_header_text xpath (//*[contains(@src,'who_we_are_the_journey_so_far.jpg')]//following::h2)[1]
+  Journey_So_Far_Section_para_text xpath (//*[contains(@src,'who_we_are_the_journey_so_far.jpg')]//following::p)[1]
+  Journey_So_Far_explore_button	xpath	//*[text()='Explore The Journey']
+
+= Who We Are Journey So Far Section =
+  #This is for Desktop
+	@on desktop
+    	Journey_So_Far_Section_para_text:
+			#text singleline is "Majid Al Futtaim has brought fun and happiness to the lives of people from around the world. Find out more about our journey to becoming the region’s leading integrated lifestyle provider."
+			css font-size is "16px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		below Journey_So_Far_Section_header_text 20px
+    		left-of who_we_are_Journey_So_Far_Image 63px
+		who_we_are_Journey_So_Far_Image:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 454 px 
+            height 580 px
+		Journey_So_Far_Section_header_text:
+			text singleline is "The Journey So Far" 
+			css font-size is "80px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		left-of who_we_are_Journey_So_Far_Image 63px
+    		aligned vertically left Journey_So_Far_Section_para_text
+		Journey_So_Far_explore_button:
+			width 263 px
+			height 52 px
+			left-of who_we_are_Journey_So_Far_Image 255px
+= Who We Are Journey So Far Section =
+  #This is for Mobile
+	@on mobile
+    	Journey_So_Far_Section_para_text:
+    		#text singleline is "Majid Al Futtaim has brought fun and happiness to the lives of people from around the world. Find out more about our journey to becoming the region’s leading integrated lifestyle provider."
+    		css font-size is "14px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		below Journey_So_Far_Section_header_text 30px
+		who_we_are_Journey_So_Far_Image:
+			#image file home_who_we_are_section_mobile.png
+			width 408 px
+			height 516 px
+			aligned vertically left Journey_So_Far_Section_header_text
+			aligned vertically left Journey_So_Far_Section_para_text
+			aligned vertically all Journey_So_Far_explore_button
+        Journey_So_Far_Section_header_text:
+    		text singleline is "The Journey So Far"
+    		css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		below who_we_are_Journey_So_Far_Image 40px
+		Journey_So_Far_explore_button:
+			width 408 px
+			height 52 px
+			below Journey_So_Far_Section_para_text 102px
+

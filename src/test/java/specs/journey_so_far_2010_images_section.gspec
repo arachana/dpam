@@ -1,0 +1,97 @@
+#Declaring objects with css and xpath locators
+@objects
+  
+  journey_so_far_2010_images-* xpath (//*[@class='company-icon']//img)[position()>9 and position()<13]
+  journey_so_far_2010_years-* xpath (//*[@class='company-year'])[position()>6 and position()<10]
+  journey_so_far_2010_images_content-* xpath (//*[@class='company-desc'])[position()>9 and position()<13]
+  #journey_so_far_2010_main_image_desktop  xpath //*[@alt='journey2010skidubai']
+  #journey_so_far_2010_main_image_mobile  xpath //*[@alt='whowearejourneyskidubai']
+  journey_so_far_2010_main_image_hading xpath //*[@alt='journey2010skidubai']//following::h2[position()=1]
+  journey_so_far_2010_main_image_text_content xpath //*[@alt='journey2010skidubai']//following::h2[position()=1]//following::div[position()=1]
+  journey_so_far_2010_lbl-* xpath (//*[@class='lines']//child::span)[position()>12 and position()<17]
+  journey_so_far_2010_i_fly_dubai_logo  xpath //*[@alt='IFlyDubai']
+  journey_so_far_2010_i_fly_dubai_logo_text  xpath //*[@alt='IFlyDubai']//following::p[position()=1]
+= Journey So Far 2010 Section Desktop =
+  #This is for Desktop
+	@on desktop
+      journey_so_far_2010_images-*:
+        width 150 px
+        height 90 px
+      journey_so_far_2010_images-1:
+        aligned horizontally bottom journey_so_far_2010_images-2 15px
+        aligned horizontally bottom journey_so_far_2010_images-3 15px
+      journey_so_far_2010_years-*:
+        css font-size is "34px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2010_years-1:
+        aligned horizontally all journey_so_far_2010_years-2 15px
+        aligned horizontally all journey_so_far_2010_years-3 15px 
+      journey_so_far_2010_images_content-*:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_2010_images_content-1:
+        aligned horizontally top journey_so_far_2010_images_content-2 5px
+        aligned horizontally top journey_so_far_2010_images_content-3 5px
+      #journey_so_far_2010_main_image_desktop:
+        #width 743 px
+        #height 519 px
+      #journey_so_far_2010_main_image_hading:
+        #css font-size is "80px"
+        #css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      #journey_so_far_2010_main_image_text_content:
+        #css font-size is "16px"
+        #css font-family matches ".*DIN-Alternate, sans-serif*"
+      #journey_so_far_2010_lbl-*:
+        #css font-size is "52px"
+        #css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2010_i_fly_dubai_logo:
+        width 150 px
+        height 150 px
+        inside screen 591px left
+        inside screen 592px right
+      journey_so_far_2010_i_fly_dubai_logo_text:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+        #text is "iFly Dubai, the region’s 1st indoor skydiving experience, opens in City Centre Mirdif"
+        inside screen 381px left
+        inside screen 383px right
+= Journey So Far 2010 Section Mobile =
+  #This is for Mobile
+	@on mobile
+	  journey_so_far_2010_images-*:
+        width 150 px
+        height 90 px
+      journey_so_far_2010_years-*:
+        css font-size is "34px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2010_years-1:
+        aligned vertically all journey_so_far_2010_years-2
+        aligned vertically all journey_so_far_2010_years-3 
+	  journey_so_far_2010_images_content-*:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      #journey_so_far_2010_main_image_mobile:
+        #width 452 px
+        #height 580 px
+      #journey_so_far_2010_main_image_hading:
+        #css font-size is "52px"
+        #css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      #journey_so_far_2010_main_image_text_content:
+        #css font-size is "14px"
+        #css font-family matches ".*DIN-Alternate, sans-serif*"
+        #journey_so_far_2010_lbl-*:
+        #css font-size is "52px"
+        #css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2010_i_fly_dubai_logo:
+        width 150 px
+        height 150 px
+        inside screen 149px left
+        inside screen 149px right
+      journey_so_far_2010_i_fly_dubai_logo_text:
+        css font-size is "14px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+        #text is "iFly Dubai, the region’s 1st indoor skydiving experience, opens in City Centre Mirdif"
+        inside screen 20px left
+        inside screen 20px right   
+
+			

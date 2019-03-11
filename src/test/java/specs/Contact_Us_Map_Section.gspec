@@ -1,0 +1,42 @@
+#Declaring objects with css and xpath locators
+@objects
+  contact_us_map_section	xpath	//*[@id='map']
+  contact_us_map_section_header	xpath	//*[contains(text(),'Our Presence')]
+  contact_us_map_section_country_dropdown	xpath	//*[@id='map']//following::div[@class='filter-option-inner']
+  footer   xpath	//*[@class='footer-content']//ancestor::footer
+
+= Contact Us map Section =
+  #This is for Desktop
+	@on desktop
+    	contact_us_map_section_header:
+			text singleline is "Our Presence"
+			css font-size is "80px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		above contact_us_map_section 115px
+		contact_us_map_section:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 1333 px 
+            height 550 px
+            above footer 0px
+		contact_us_map_section_country_dropdown:
+			width 233 px
+			height 40 px 
+    		inside contact_us_map_section
+= Contact Us map Section =
+  #This is for Mobile
+	@on mobile
+    	contact_us_map_section_header:
+			text singleline is "Our Presence"
+			css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+			above contact_us_map_section 85px
+		contact_us_map_section:
+			#image file home_who_we_are_section_mobile.png
+			width 448 px
+			height 735 px
+			above footer 0px
+        contact_us_map_section_country_dropdown:
+        	width 352 px
+        	height 40 px
+        	inside contact_us_map_section
+

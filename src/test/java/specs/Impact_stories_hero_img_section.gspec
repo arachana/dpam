@@ -1,0 +1,40 @@
+#Declaring objects with css and xpath locators
+@objects
+  impact_stories_hero_img_desktop	xpath	//*[contains(@src,'impactstoriesspotlight.jpg')]
+  impact_stories_hero_img_mobile	xpath	//*[contains(@src,'impactstoriesspotlight.jpg')]
+  hero_img_header_text xpath (//*[contains(@src,'impactstoriesspotlight.jpg')]//following::h1)[1]
+  hero_img_para_text xpath (//*[contains(@src,'impactstoriesspotlight.jpg')]//following::p)[1]
+
+= Impact Stories Hero Image Section =
+  #This is for Desktop
+	@on desktop
+    	hero_img_para_text:
+			#text singleline is "As one of the region’s leading companies,representing many of the region’s best brands, we have a responsibility to make a positive impact on the communities and markets we operate in – socially, environmentally and financially."
+			css font-size is "20px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		inside impact_stories_hero_img_desktop
+		impact_stories_hero_img_desktop:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 1333 px 
+            height 608 px
+		hero_img_header_text:
+			text singleline is "Impact Stories" 
+			css font-size is "80px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside impact_stories_hero_img_desktop
+    		aligned vertically left hero_img_para_text
+= Impact Stories Hero Image Section =
+  #This is for Mobile
+	@on mobile
+    	hero_img_para_text:
+    		absent
+		impact_stories_hero_img_mobile:
+			#image file home_who_we_are_section_mobile.png
+			width 448 px
+			height 795 px
+        hero_img_header_text:
+    		text singleline is "Impact Stories"
+    		css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside impact_stories_hero_img_mobile
+

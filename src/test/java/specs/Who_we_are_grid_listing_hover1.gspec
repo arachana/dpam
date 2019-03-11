@@ -1,0 +1,117 @@
+#Declaring objects with css and xpath locators
+@objects
+  
+  grid_listing_container	xpath	//*[@class='grid-compontent ']
+  grid_images_desktop-*	xpath	//*[contains(@class,'grid-image hide-on-mobile pick-gradient')]
+  grid_images_mobile-*	xpath	//*[contains(@class,'grid-image mobile pick-gradient')]
+  grid_images_heading-*	xpath	//*[@class='grid-content']//child::h3 
+  grid_images_para-*	xpath	//*[@class='grid-compontent ']//child::p
+  grid_images_cta_button-*	xpath	(//*[@class='explore-btn']//child::a)[position()>2 and position()<7]
+
+@groups
+	menu_bar_links	who_we_are_link,what_we_do_link,people_and_careers,the_leadership_institute,investor_relations,media_centre
+@script
+	grid_images_heading_text = ["Brand", "Industries", "Sustainability & Impact", "Corporate Compliance"];
+	grid_images_cta_button_text = ["Brand", "Industries", "Creating Impact", "Corporate Compliance"];
+	grid_images_cta_button_text_mobile = ["BRAND", "INDUSTRIES", "CREATING IMPACT", "CORPORATE COMPLIANCE"];
+
+
+#Home Page Tag
+= Who We are Grid Listing desktop =
+  #This is for Desktop
+	@on desktop
+      
+		grid_listing_container:
+			width 1333 px 
+			height 792 px
+		grid_images_desktop-*:
+		@forEach [grid_images_desktop-*] as item, index as i
+			${item}:
+				width 667 px
+				height 361 px
+				inside grid_listing_container
+		grid_images_heading-*:
+		@forEach [grid_images_heading-*] as item, index as i
+			${item}:
+				text is "${grid_images_heading_text[i-1]}"
+				css font-size is "40px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+				inside grid_listing_container
+		#grid_images_para-*:
+		#@forEach [grid_images_para-*] as item, index as i
+			#${item}:
+				#text is "${grid_images_heading_text[i-1]}"
+				#css font-size is "16px"
+				#css font-family matches ".*DIN-Alternate, sans-serif*"
+				#inside grid_listing_container
+		grid_images_cta_button-*:
+		@forEach [grid_images_cta_button-*] as item, index as i
+			${item}:
+				#width 667 px
+				height 52 px
+				text is "${grid_images_cta_button_text[i-1]}"
+				css font-size is "18px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+				inside grid_listing_container
+		grid_images_para-1:
+			text singleline is "Our brand reflects the diversity of our operations, which create great moments for everyone, every day."
+			css font-size is "16px"
+			css font-family matches ".*DIN-Alternate, sans-serif*"
+			inside grid_listing_container
+		#grid_images_para-2:
+			#text singleline is "We operate across a range of industries spanning retail, leisure and entertainment and real estate."
+		#grid_images_para-3:
+			#text singleline is "Our focus is on making a positive impact on people, and the markets and communities in which we operate"
+		#grid_images_para-4:
+			#text singleline is "Our unrelenting commitment to compliance and best-practice corporate governance is fundamental to how we operate as a business."
+		grid_images_desktop-*:
+			count any grid_images_desktop-* is 4 
+
+	
+   
+	@on mobile
+		
+		grid_listing_container:
+			width 448 px 
+			height 3165 px 
+		grid_images_mobile-*:
+		@forEach [grid_images_mobile-*] as item, index as i
+			${item}:
+				width 448 px
+				height 770 to 800 px
+				inside grid_listing_container
+		@forEach [grid_images_heading-*] as item, index as i
+			${item}:
+				text is "${grid_images_heading_text[i-1]}"
+				css font-size is "36px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+				inside grid_listing_container
+		#@forEach [grid_images_para-*] as item, index as i
+			#${item}:
+				#css font-size is "14px"
+				#css font-family matches ".*DIN-Alternate, sans-serif*"
+				#inside grid_listing_container
+		@forEach [grid_images_cta_button-*] as item, index as i
+			${item}:
+				text is "${grid_images_cta_button_text_mobile[i-1]}"
+				css font-size is "11px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+				inside grid_listing_container
+		grid_images_para-1:
+			text singleline is "Our brand reflects the diversity of our operations, which create great moments for everyone, every day."
+			css font-size is "14px"
+			css font-family matches ".*DIN-Alternate, sans-serif*"
+			inside grid_listing_container
+		#grid_images_para-2:
+			#text singleline is "We operate across a range of industries spanning retail, leisure and entertainment and real estate."
+		#grid_images_para-3:
+			#text singleline is "Our focus is on making a positive impact on people, and the markets and communities in which we operate"
+		#grid_images_para-4:
+			#text singleline is "Our unrelenting commitment to compliance and best-practice corporate governance is fundamental to how we operate as a business."
+		grid_images_mobile-*:
+			count any grid_images_mobile-* is 4
+
+		
+       
+
+			

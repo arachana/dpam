@@ -1,0 +1,43 @@
+#Declaring objects with css and xpath locators
+@objects
+  contact_us_feedback_section	xpath	//*[contains(text(),'your experience with our website?')]//ancestor::div[position()=1]
+  contact_us_feedback_section_header	xpath	//*[contains(text(),'your experience with our website?')]
+  contact_us_feedback_section_smileys-*	xpath	//*[@class='remark']//input//ancestor::li
+
+= Contact Us FeedBack Section =
+  #This is for Desktop
+	@on desktop
+    	contact_us_feedback_section_header:
+			text singleline is "How's your experience with our website?"
+			css font-size is "34px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside contact_us_feedback_section
+		contact_us_feedback_section:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 594 px 
+            height 1051 px
+		contact_us_feedback_section_smileys-1:
+			width 94 px
+			height 94 px 
+			aligned horizontally all contact_us_feedback_section_smileys-2
+			aligned horizontally all contact_us_feedback_section_smileys-3
+    		inside contact_us_feedback_section
+= Contact Us FeedBack Section =
+  #This is for Mobile
+	@on mobile
+    	contact_us_feedback_section_header:
+			text singleline is "How's your experience with our website?"
+			css font-size is "28px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+			inside contact_us_feedback_section
+		contact_us_feedback_section:
+			#image file home_who_we_are_section_mobile.png
+			width 408 px
+			height 366 px
+        contact_us_feedback_section_smileys-1:
+        	width 54 px
+        	height 54 px
+        	inside contact_us_feedback_section
+        	aligned horizontally all contact_us_feedback_section_smileys-2
+        	aligned horizontally all contact_us_feedback_section_smileys-3
+

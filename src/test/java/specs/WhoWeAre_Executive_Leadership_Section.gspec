@@ -1,0 +1,55 @@
+#Declaring objects with css and xpath locators
+@objects
+  who_we_are_Executive_Leadership_Image	xpath	//*[contains(@src,'who_we_are_executive_leadership.jpg')]
+  Executive_Leadership_Section_header_text xpath (//*[contains(@src,'who_we_are_executive_leadership.jpg')]//following::h2)[1]
+  Executive_Leadership_Section_para_text xpath (//*[contains(@src,'who_we_are_executive_leadership.jpg')]//following::p)[1]//parent::div
+  Executive_Leadership_explore_button	xpath	(//*[text()='Executive Leadership'])[2]//following::*[@class='explore-btn']//a
+
+= Who We Are Executive Leadership Section =
+  #This is for Desktop
+	@on desktop
+    	Executive_Leadership_Section_para_text:
+			#text singleline is "Across our operations, we create innovative brands, destinations and spaces that burst with ingenuity. We strive to incubate happiness by creating great moments for everyone, everyday. This was the vision of our founder, Majid Al Futtaim, which is as relevant today as it was over 25 years ago."
+			css font-size is "16px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		below Executive_Leadership_Section_header_text 10px
+    		right-of who_we_are_Executive_Leadership_Image 65px
+		who_we_are_Executive_Leadership_Image:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 454 px 
+            height 580 px
+		Executive_Leadership_Section_header_text:
+			text singleline is "Executive Leadership" 
+			css font-size is "80px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		right-of who_we_are_Executive_Leadership_Image 65px
+    		aligned vertically left Executive_Leadership_Section_para_text
+		Executive_Leadership_explore_button:
+			width 181 px
+			height 52 px
+			right-of who_we_are_Executive_Leadership_Image 65px
+= Who We Are Executive Leadership Section =
+  #This is for Mobile
+	@on mobile
+    	Executive_Leadership_Section_para_text:
+    		#text singleline is "Across our operations, we create innovative brands, destinations and spaces that burst with ingenuity. We strive to incubate happiness by creating great moments for everyone, everyday. This was the vision of our founder, Majid Al Futtaim, which is as relevant today as it was over 25 years ago."
+    		css font-size is "14px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		below Executive_Leadership_Section_header_text 20px
+		who_we_are_Executive_Leadership_Image:
+			#image file home_who_we_are_section_mobile.png
+			width 408 px
+			height 522 px
+			aligned vertically left Executive_Leadership_Section_header_text
+			aligned vertically left Executive_Leadership_Section_para_text
+			aligned vertically all Executive_Leadership_explore_button
+        Executive_Leadership_Section_header_text:
+    		text singleline is "Executive Leadership"
+    		css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		below who_we_are_Executive_Leadership_Image 30px
+		Executive_Leadership_explore_button:
+			width 408 px
+			height 52 px
+			below Executive_Leadership_Section_para_text 30px
+

@@ -1,0 +1,100 @@
+#Declaring objects with css and xpath locators
+@objects
+  impact_studies_heading	xpath	//*[@class='headline']//child::h2
+  impact_studies_para1	xpath	//*[@class='desc']//child::p[position()=2]
+  impact_studies_para2	xpath	//*[@class='desc']//child::p[position()=3]
+  impact_studies_block_images-*	xpath	//*[@class='block-image']//child::img
+  impact_studies_block_images_heading-*	xpath	//*[@class='text-title']
+  impact_studies_block_images_para-*	xpath	//*[@class='text-summary']
+  impact_studies_read_more_arrow_buttons-*	xpath	//*[@class='read-more-link']
+@script
+	impact_studies_heading_text = ["Ski Dubai", "Carrefour Egypt","Carrefour Kenya"];
+
+= Impact stories case studies Section =
+  #This is for Desktop
+	@on desktop
+    	impact_studies_heading:
+			text singleline is "Case Studies"
+			css font-size is "80px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*" 
+		impact_studies_para1:
+			#text singleline is "Across our business, our brands, places and spaces have had an incredible influence on the lives of the people who experience them. And by harnessing the power of people, we've delivered some pretty astonishing outcomes.
+#Read on to find out more about the impact of our operations in our retail, property, leisure and entertainment businesses."
+			css font-size is "16px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+		impact_studies_para2:
+			css font-size is "16px"
+			css font-family matches ".*DIN-Alternate, sans-serif*"
+		impact_studies_block_images-*:
+			width 377 px 
+    		height 234 px
+		impact_studies_block_images-1:
+			aligned horizontally all impact_studies_block_images-2
+			aligned horizontally all impact_studies_block_images-3
+		impact_studies_block_images_heading-*:
+		@forEach [impact_studies_block_images_heading-*] as item, index as i
+			${item}:
+				text is "${impact_studies_heading_text[i-1]}"
+				css font-size is "34px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		impact_studies_block_images_para-*:
+		@forEach [impact_studies_block_images_para-*] as item, index as i
+			${item}:
+				#text is "${impact_studies_heading_text[i-1]}"
+				css font-size is "16px"
+				css font-family matches ".*DIN-Regular, sans-serif*"
+		impact_studies_read_more_arrow_buttons-1:
+			aligned vertically left impact_studies_block_images_para-1
+			aligned vertically left impact_studies_block_images_heading-1
+		impact_studies_read_more_arrow_buttons-2:
+			aligned vertically left impact_studies_block_images_para-2
+			aligned vertically left impact_studies_block_images_heading-2
+		impact_studies_read_more_arrow_buttons-3:
+			aligned vertically left impact_studies_block_images_para-3
+			aligned vertically left impact_studies_block_images_heading-3
+		impact_studies_block_images-*:
+			count any impact_studies_block_images-* is 3
+= Impact stories case studies Section =
+  #This is for Mobile
+	@on mobile
+    	impact_studies_heading:
+			text singleline is "Case Studies"
+			css font-size is "36px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*" 
+		impact_studies_para1:
+			#text singleline is "Across our business, our brands, places and spaces have had an incredible influence on the lives of the people who experience them. And by harnessing the power of people, we've delivered some pretty astonishing outcomes.
+#Read on to find out more about the impact of our operations in our retail, property, leisure and entertainment businesses."
+			css font-size is "14px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+		impact_studies_para2:
+			css font-size is "14px"
+			css font-family matches ".*DIN-Alternate, sans-serif*"
+		impact_studies_block_images-*:
+			width 403 px
+    		height 250 px
+		impact_studies_block_images-1:
+			aligned vertically all impact_studies_block_images-2
+    		aligned vertically all impact_studies_block_images-3
+		impact_studies_block_images_heading-*:
+		@forEach [impact_studies_block_images_heading-*] as item, index as i
+			${item}:
+				text is "${impact_studies_heading_text[i-1]}"
+				css font-size is "28px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		impact_studies_block_images_para-*:
+		@forEach [impact_studies_block_images_para-*] as item, index as i
+			${item}:
+				#text is "${impact_studies_heading_text[i-1]}"
+				css font-size is "16px"
+				css font-family matches ".*DIN-Regular, sans-serif*"
+		impact_studies_read_more_arrow_buttons-1:
+			aligned vertically left impact_studies_read_more_arrow_buttons-2
+			aligned vertically left impact_studies_read_more_arrow_buttons-3
+			aligned vertically left impact_studies_block_images_heading-1
+			aligned vertically left impact_studies_block_images_heading-2
+			aligned vertically left impact_studies_block_images_heading-3
+			aligned vertically left impact_studies_block_images_para-1
+			aligned vertically left impact_studies_block_images_para-2
+			aligned vertically left impact_studies_block_images_para-3
+		impact_studies_block_images-*:
+			count any impact_studies_block_images-* is 3		

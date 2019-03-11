@@ -1,0 +1,42 @@
+#Declaring objects with css and xpath locators
+@objects
+  what_we_do_image_section_para-*	xpath	(//*[@class='home-what-we-do']//following::p)[position()=2]
+  what_we_do_image_section_lbl-*	xpath	(//*[@class='home-what-we-do']//following::h3)[position()=2]
+  home_what_we_do_carousal_img_desktop	xpath	(//*[contains(@src,'homepage_industries_shopping_mall.jpg')])[1]
+  home_what_we_do_carousal_img_mobile	xpath	(//*[contains(@src,'homepage_industries_shopping_mall.jpg')])[1]
+
+= Home What we do Section =
+  #This is for Desktop
+	@on desktop
+    	what_we_do_image_section_para-*:
+			#text singlelien is "In our quest to create ‘great moments for everyone, everyday’, Majid Al Futtaim has enabled happiness in the lives of people from around the world. Find out more about what we do."
+			css font-size is "16px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		inside home_what_we_do_carousal_img_desktop
+    		aligned vertically left what_we_do_image_section_lbl-1 
+		home_what_we_do_carousal_img_desktop:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 1333 px 
+            height 667 px
+		what_we_do_image_section_lbl-*:
+			css font-size is "40px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside home_what_we_do_carousal_img_desktop
+= Home What we do Section =
+  #This is for Mobile
+	@on mobile
+    	what_we_do_image_section_para-*:
+			#text singleline is "In our quest to create ‘great moments for everyone, everyday’, Majid Al Futtaim has enabled happiness in the lives of people from around the world. Find out more about what we do."
+			css font-size is "14px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+			inside home_what_we_do_carousal_img_mobile
+    		aligned vertically left what_we_do_image_section_lbl-1
+		home_what_we_do_carousal_img_mobile:
+			#image file home_who_we_are_section_mobile.png
+			width 448 px
+			height 770 px
+        what_we_do_image_section_lbl-*:
+        	inside home_what_we_do_carousal_img_mobile
+        	css font-size is "28px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+

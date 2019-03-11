@@ -1,0 +1,74 @@
+#@import home_people_and_careers_section.gspec
+#Declaring objects with css and xpath locators
+@objects
+  leadership_institute_explore_button	xpath	(//*[text()='Explore More'])[2]
+  home_leadership_institute_main_img	xpath	//*[contains(@src,'homepage_leadership_institute.jpg')]
+  home_leadership_institute_main_img_content_para	xpath	//*[contains(@src,'homepage_leadership_institute.jpg')]//following::p[position()=1]
+  home_leadership_institute_lbl	xpath	(//span[text()='The Leadership Institute'])[2]
+  home_leadership_institute_grow_with_us_lbl	xpath	//h2[text()='Grow With Us']
+  home_leadership_institute_main_img_mobile	xpath	//*[contains(@src,'homepage_leadership_institute.jpg')]
+  home_people_and_careers_main_img_content_para	xpath	(//span[text()='The Leadership Institute'])[position()=2]//following::p[position()=1]
+  home_people_and_careers_main_img	xpath	//*[contains(@src,'homepage_leadership_institute.jpg')]
+  home_people_and_careers_img_desktop	xpath	//*[contains(@src,'homepage_peoples_and_careers.jpg')]
+  people_and_careers_explore_button	xpath	(//*[text()='Explore More'])[1]
+= Home Who We Are Section =
+  #This is for Desktop
+	@on desktop
+    	leadership_institute_explore_button:
+			aligned vertically left home_people_and_careers_main_img_content_para
+			width 199 px 
+            height 52 px
+            inside home_leadership_institute_main_img
+        home_leadership_institute_lbl:
+        	inside home_leadership_institute_main_img
+        	aligned vertically left home_leadership_institute_main_img_content_para
+        	css font-size is "16px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_leadership_institute_main_img:
+			below home_people_and_careers_img_desktop 141 px
+			#image file home_people_and_careers_main_img.png, error %5
+			width 1333 px
+			height 608 px
+		home_leadership_institute_main_img_content_para:
+			#text singleline is "The Leadership Institute provides innovative and hands-on development programs through partnerships with leading experts and global faculty – Fostering an environment of empowerment and growth."
+			css font-size is "16px"
+			css font-family matches ".*DIN-Alternate, sans-serif*" 
+			inside home_leadership_institute_main_img
+		home_leadership_institute_grow_with_us_lbl:
+			aligned vertically left home_leadership_institute_main_img_content_para
+			inside home_leadership_institute_main_img
+			css font-size is "80px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_leadership_institute_main_img_mobile:
+			#absent
+
+= Home Who We Are Section =
+  #This is for Mobile
+	@on mobile
+    	leadership_institute_explore_button:
+			aligned vertically left home_people_and_careers_main_img_content_para
+			width 408 px 
+            height 52 px
+            inside home_leadership_institute_main_img_mobile
+        home_leadership_institute_lbl:
+        	inside home_leadership_institute_main_img_mobile
+        	aligned vertically left home_leadership_institute_main_img_content_para
+        	css font-size is "12px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_leadership_institute_main_img_mobile:
+			below people_and_careers_explore_button 70 px
+			#image file home_people_and_careers_main_img.png, error %5
+			width 448 px
+			height 770 px
+		home_leadership_institute_main_img_content_para:
+			#text singleline is "The Leadership Institute provides innovative and hands-on development programs through partnerships with leading experts and global faculty – Fostering an environment of empowerment and growth." 
+			inside home_leadership_institute_main_img_mobile
+			css font-size is "14px"
+			css font-family matches ".*DIN-Alternate, sans-serif*"
+		home_leadership_institute_grow_with_us_lbl:
+			aligned vertically left home_leadership_institute_main_img_content_para
+			inside home_leadership_institute_main_img_mobile
+			css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_leadership_institute_main_img:
+			#absent

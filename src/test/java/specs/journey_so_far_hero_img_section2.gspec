@@ -1,0 +1,47 @@
+#Declaring objects with css and xpath locators
+@objects
+  journey_so_far_hero_img_desktop	xpath	//*[@alt='journeyspotlight']//ancestor::div[1]
+  journey_so_far_hero_img_mobile	xpath	//*[@alt='journeyspotlight']//ancestor::div[2]
+  hero_img_text	xpath	(//*[@class='b-img mobile']//following::h2)[1]
+  explore_video_text	xpath	(//*[@data-video-type='external']//child::span)[1]
+  journey_so_far_time_line_items-*	xpath	//*[@class='dot']//ancestor::a
+  journey_so_far_section_para	xpath	(//*[@data-aos='fade-up']//following-sibling::p)[1]
+  ceo_name_lable  xpath //*[contains(text(),'Chief')]//preceding::p[position()=1]
+  ceo_position_label  xpath //*[contains(text(),'Chief')]
+@script
+	timeline_items_text = ["THE JOURNEY SO FAR", "1995", "2000", "2005", "2010", "2018"];
+
+= Journey So Far Hero Image Section Desktop =
+  #This is for Desktop
+	@on desktop
+      journey_so_far_section_para:
+        width 667 px
+        height 104px
+        css font-size is "20px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        inside screen 333px left
+        inside screen 333px right
+      ceo_name_lable:
+        css font-size is "20px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      ceo_position_label:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+
+= Journey So Far Hero Image Section Mobile =
+  #This is for Mobile
+	@on mobile
+	  journey_so_far_section_para:
+        width 408 px
+        height 150 px
+        css font-size is "20px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        inside screen 20px left
+        inside screen 20px right
+      ceo_name_lable:
+        css font-size is "20px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      ceo_position_label:
+        css font-size is "13px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+			

@@ -1,0 +1,41 @@
+#Declaring objects with css and xpath locators
+@objects
+  cookie_banner_section	xpath	//*[@id='cookie-law']
+  cookie_banner_text	xpath	(//*[@id='cookie-law']//following::p)[1]
+  cookie_banner_close_button	xpath	//*[@class='close-cookie-banner']//child::img
+
+= Contact Us map Section =
+  #This is for Desktop
+	@on desktop
+    	cookie_banner_text:
+			text singleline is "This website uses cookies to improve your experience and to personalise our content to you. By continuing to use this website you consent to the use of cookies. For more information, refer to our Privacy Policy."
+			css font-size is "14px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside cookie_banner_section
+		cookie_banner_section:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 1333 px 
+            height 78 px
+            #above footer 0px
+		cookie_banner_close_button:
+			width 23 px
+			height 22 px 
+    		inside cookie_banner_section
+= Contact Us map Section =
+  #This is for Mobile
+	@on mobile
+    	cookie_banner_text:
+			text singleline is "This website uses cookies to improve your experience and to personalise our content to you. By continuing to use this website you consent to the use of cookies. For more information, refer to our Privacy Policy."
+			css font-size is "14px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+			#above contact_us_map_section 85px
+		cookie_banner_section:
+			#image file home_who_we_are_section_mobile.png
+			width 448 px
+			height 116 px
+			#above footer 0px
+        cookie_banner_close_button:
+        	width 23 px
+        	height 22 px
+        	inside cookie_banner_section
+

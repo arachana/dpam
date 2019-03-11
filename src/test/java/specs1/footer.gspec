@@ -1,0 +1,143 @@
+#Declaring objects with css and xpath locators
+@objects
+ 
+  footer_logo_mobile		xpath		//*[@class='footer-logo']//following::img
+  footer_logo_desktop		xpath		//*[@class='footer-logo']//following::img
+  footer		xpath		//*[@class='footer-content']//ancestor::footer
+  footer_copyright_section	xpath	//*[@class='footer-copyright']
+  footer_copyright_text	xpath	//*[@class='copyright-text']//child::span
+  footer_main_links-*	xpath	//*[@class='links-heading']//child::h6
+  footer_who_we_are_sub_menus-*	xpath	(//*[@class='links-heading']//child::h6//following::a)[position()<6]
+  footer_what_we_do_sub_menus-*	xpath	(//*[@class='links-heading']//child::h6//following::a)[position()>5 and position()<10]
+  footer_the_leadership_institute_sub_menus-*	xpath	(//*[@class='links-heading']//child::h6//following::a)[position()=10]
+  footer_quick_links_sub_menus-*	xpath	(//*[@class='links-heading']//child::h6//following::a)[position()>10]
+  footer_social_media_icons-*	xpath	//*[@class='social-icons']//child::a
+  footer_social_media_text	xpath	//*[@class='social-icons']//child::h6
+@script
+	footer_link_text = ["WHO WE ARE", "WHAT WE DO", "THE LEADERSHIP INSTITUTE", "QUICK LINKS"];
+	who_we_are_sub_menus = ["VISION & VALUES", "OUR JOURNEY", "SUSTAINABILITY & IMPACT", "CORPORATE COMPLIANCE", "EXECUTIVE LEADERSHIP"];
+	what_we_do_sub_menus = ["UNIQUE EXPERIENCES", "OUR INDUSTRIES", "OUR BRAND FAMILY","PARTNER WITH US"];
+	leadership_institute_sub_menus = ["EXPLORE THE VENUE"];
+	quick_links_sub_menus = ["CONTACT US", "MEDIA CENTRE", "PEOPLE & CAREERS", "INVESTOR RELATIONS", "PRIVACY POLICY", "ANTI FRAUD DISCLAIMER"];
+	quick_links_sub_menus_mobile = ["Contact Us", "Media Centre", "People & Careers", "Investor Relations", "Privacy Policy", "Anti Fraud Disclaimer"];
+
+
+#Home Page Tag
+= Home Page =
+  #This is for Desktop
+	@on desktop
+       
+		#Footer properties
+		footer:
+			inside screen 0px bottom
+			inside screen 0px left
+			inside screen 0px right
+			width 1333 px 
+			height 363 px
+		footer_logo_desktop:
+		    inside footer
+			image file maf_footer_logo_desktop.png, error 5000px
+			aligned vertically left footer_social_media_icons-1
+			left-of footer_main_links-1 146 px
+			width 262 px 
+			height 53 px
+		footer_copyright_section:
+			width 1333 px 
+			height 60 px
+		footer_copyright_text:
+			text contains "2019 Majid Al Futtaim. All rights reserved."
+			inside footer_copyright_section
+			css font-size is "12px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+		footer_main_links-1:
+			aligned horizontally top footer_main_links-2
+			aligned horizontally top footer_main_links-3
+			aligned horizontally top footer_main_links-4
+		@forEach [footer_main_links-*] as item, index as i
+        	${item}:
+            	text is "${footer_link_text[i-1]}"
+            	inside footer
+        @forEach [footer_who_we_are_sub_menus-*] as item, index as i
+        	${item}:
+            	text is "${who_we_are_sub_menus[i-1]}"
+            	inside footer
+        @forEach [footer_what_we_do_sub_menus-*] as item, index as i
+        	${item}:
+            	text is "${what_we_do_sub_menus[i-1]}"
+            	inside footer
+    	@forEach [footer_the_leadership_institute_sub_menus-*] as item, index as i
+        	${item}:
+            	text is "${leadership_institute_sub_menus[i-1]}"
+            	inside footer
+    	@forEach [ footer_quick_links_sub_menus-*] as item, index as i
+        	${item}:
+            	text is "${quick_links_sub_menus[i-1]}"
+            	inside footer
+    	footer_social_media_icons-*:
+    		width 40 px 
+			height 40 px
+			inside footer
+			below footer_logo_desktop 77 px
+		footer_social_media_icons-1:
+			aligned horizontally all footer_social_media_icons-2
+			aligned horizontally all footer_social_media_icons-3
+			aligned horizontally all footer_social_media_icons-4
+		footer_social_media_text:
+			text is "Stay in touch with us"
+			inside footer
+			css font-size is "15px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+		  
+   
+	@on mobile
+		
+		#Footer properties
+		footer:
+			inside screen 0 to 1 px bottom
+			inside screen 0px left
+			inside screen 0px right
+			width 448 px 
+			#height 748 to 750 px
+		footer_logo_mobile:
+		    inside footer
+			#image file maf_footer_logo_mobile.png, error 5000px
+			aligned vertically left footer_social_media_icons-1
+			above footer_social_media_text 44 to 45 px
+			width 226 px 
+			height 46 px
+		footer_copyright_section:
+			width 448 px 
+			height 60 px
+		footer_copyright_text:
+			text contains "2019 Majid Al Futtaim. All rights reserved."
+			inside footer_copyright_section
+			css font-size is "12px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+		@forEach [footer_main_links-*] as item, index as i
+        	${item}:
+            	text is "${footer_link_text[i-1]}"
+            	inside footer
+    	#@forEach [ footer_quick_links_sub_menus-*] as item, index as i
+        	#${item}:
+            	#text is "${quick_links_sub_menus_mobile[i-1]}"
+            	#inside footer
+    	footer_who_we_are_sub_menus-*:
+    		absent
+		footer_what_we_do_sub_menus-*:
+			absent
+		footer_the_leadership_institute_sub_menus-*:
+			absent
+		footer_social_media_icons-*:
+    		width 47 px 
+			height 47 px
+			inside footer
+			below footer_logo_mobile 77 to 78 px
+		footer_social_media_text:
+			text is "Stay in touch with us"
+			inside footer
+			css font-size is "15px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+
+       
+
+			

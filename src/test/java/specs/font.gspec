@@ -1,0 +1,146 @@
+#Declaring objects with css and xpath locators
+@objects
+  bullet_point_section-*	xpath	//*[@class='bullet-points-section']
+  section_heading-*	xpath	//*[contains(@class,'section-heading')]
+  sub_content-*	xpath	//*[@class='sub-content']
+  testimonial_block-*	xpath	(//*[@class='testimonail-block'])[2]
+  block_author-*	xpath	(//*[@class='block-author'])[2]
+  block_author_details-*	xpath	(//*[@class='author-details'])[2]
+  hero_image_header	xpath	(//*[@class='banner-content row']//following::h2)[1]
+  breadcrumb	xpath	//*[@class='breadcrumbs']
+  explore_buttons-*	xpath	//*[@class='explore-btn']
+  grid_headers1-*	xpath	//*[@class='pick-box-shadow']
+  grid_headers2-*	xpath	//*[@class='brand-family-content']//following::h3
+  bullet_points-*	xpath	//*[contains(@class,'bullet-points')]//li
+  explore_video_buttons-*	xpath	//*[contains(@class,'explore-video-btn')]//child::span
+  headline-*	xpath	//*[@class='headline']
+  headline_details-*	xpath	//*[@class='headline']//following::*[@class='desc']
+  bullet_point_section_brands-*	xpath	//*[@class='bullet-points-section']
+  brands_fact_and_figures-*	xpath	//*[@class='fact-value']//following::span//ancestor::div[@class='fact-name' or @class='fact-value']
+  dail_industries_labels-*	xpath	(//*[contains(@id,'txt-')])[position()<12]
+  dail_center_text	xpath	//*[@id='c-text']
+  dail_view_all_brands_links	xpath	//*[@id='view-all-brands']//child::a
+  content_description-*	xpath	//*[@class='content-desc']//following::p
+  stories-headings-*	xpath	//*[@class='text-title']
+  stories-details-*	xpath	//*[@class='text-summary']//following::p
+  quote_details-*	xpath	//*[@class='block-content']//following::p
+  content_titile-*	xpath	//*[@class='content-title']
+  content_description-*	xpath	//*[@class='content-description']//following::p
+  kit-names-*	xpath	//*[@class='kit-name'] 
+
+= Contact Us map Section =
+  #This is for Desktop
+	@on desktop
+		bullet_point_section-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		section_heading-*:
+			css font-family matches ".*HS-Ishraq-Bold*"
+		sub_content-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		testimonial_block-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		block_author-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		hero_image_header:
+			css font-family matches ".*HS-Ishraq-Bold*"
+		breadcrumb:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		explore_buttons-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		grid_headers1-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		grid_headers2-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		bullet_points-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		explore_video_buttons-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		headline-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		headline_details-*:
+		 	css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		bullet_point_section_brands-*:
+	 		css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		brands_fact_and_figures-*:
+ 			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		dail_industries_labels-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		dail_center_text:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		dail_view_all_brands_links:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		content_description-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		block_author_details-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		stories-headings-*:
+		 	css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		stories-details-*:
+	 		css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		quote_details-*:
+ 			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		content_titile-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		content_description-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		kit-names-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+			
+= Contact Us map Section =
+  #This is for Mobile
+	@on mobile
+    	bullet_point_section-*:
+    		css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		section_heading-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		sub_content-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		testimonial_block-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		block_author-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		block_author_details-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		hero_image_header:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		breadcrumb:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		explore_buttons-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		grid_headers1-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		grid_headers2-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		bullet_points-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		explore_video_buttons-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		headline-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		headline_details-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		bullet_point_section_brands-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		brands_fact_and_figures-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		dail_industries_labels-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		dail_center_text:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		dail_view_all_brands_links:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		content_description-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		stories-headings-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		stories-details-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		quote_details-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		content_titile-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		content_description-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		kit-names-*:
+			css font-family matches ".*DIN-NextLTArabic-Regular, DIN-Alternate, sans-serif*"
+		

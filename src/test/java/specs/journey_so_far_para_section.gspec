@@ -1,0 +1,44 @@
+#Declaring objects with css and xpath locators
+@objects
+  journey_so_far_hero_img_desktop	xpath	//*[@alt='journeyspotlight']//ancestor::div[1]
+  journey_so_far_hero_img_mobile	xpath	//*[@alt='journeyspotlight']//ancestor::div[2]
+  hero_img_text	xpath	(//*[@class='b-img mobile']//following::h2)[1]
+  explore_video_text	xpath	(//*[@data-video-type='external']//child::span)[1]
+  journey_so_far_time_line_items-*	xpath	//*[@class='dot']//ancestor::a
+  journey_so_far_section_para	xpath	(//*[@data-aos='fade-up']//following-sibling::p)[1]
+@script
+	timeline_items_text = ["THE JOURNEY SO FAR", "1995", "2000", "2005", "2010", "2018"];
+= Journey So Far Hero Image Section Desktop =
+  #This is for Desktop
+  @on desktop
+      journey_so_far_hero_img_desktop:
+        width 1333 px
+        height 608 px
+
+= Journey So Far Hero Image Section Desktop =
+  #This is for Desktop
+	@on desktop
+    hero_img_text:
+			text singleline is ""Over two decades, we have created some of the region’s leading brands, places and spaces to fulfil our mission of creating unique and engaging experiences for our customers, while driving our future strategy and growth."" 
+			css font-size is "80px"
+    	css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    	width 452 px 
+      height 802 px
+      inside screen 0px left
+      inside screen 0px right
+		
+		
+
+			
+= Journey So Far Hero Image Section Mobile =
+  #This is for Mobile
+	@on mobile
+    	hero_img_text:
+      text singleline is ""Over two decades, we have created some of the region’s leading brands, places and spaces to fulfil our mission of creating unique and engaging experiences for our customers, while driving our future strategy and growth."" 
+      css font-size is "80px"
+      css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      width 452 px 
+      height 802 px
+      inside screen 0px left
+      inside screen 0px right
+			

@@ -1,0 +1,89 @@
+#Declaring objects with css and xpath locators
+@objects
+  media_centre_section_header_lbl		xpath	//*[@class='section-heading']//child::*[contains(text(),"What's On")]
+  media_centre_news_heading	xpath	//*[@class='media-news-heading']//child::h3
+  media_centre_news_details-*	xpath	//*[@class='media-news-details']
+  media_centre_social_title	xpath	//*[@class='social-title']
+  media_centre_ellipsis_text	xpath	//*[@class='ellipsis-text']
+  media_centre_tags-*	xpath	//*[@class='tags']
+  media_centre_explore_button	xpath	//*[text()='News Releases']
+  media_centre_section_lbl	xpath	//*[@class='section-name']//*[text()='Media Centre']
+  media_arrow_button	xpath	//*[@alt='Arrow']
+@script
+	media_centre_tags_text = ["UAE", "CX","photooftheday","greatmoments"];
+
+= Home Who We Are Section =
+  #This is for Desktop
+	@on desktop
+    	media_centre_ellipsis_text:
+			#text singleline is "Majid Al Futtaim is one of the leading drivers of economic growth and impact in the Middle East and North Africa and is a leading foreign direct investor and a catalyst for the region's economy."
+			css font-size is "14px"
+			css font-family matches ".*DIN-Alternate, sans-serif*" 
+		media_centre_section_header_lbl:
+			css font-size is "80px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		media_centre_news_heading:
+			css font-size is "34px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		media_centre_social_title:
+			css font-size is "14px"
+    		css font-family matches ".*DIN-Regular, sans-serif*"
+		media_centre_explore_button:
+			#aligned vertically left people_and_careers_section_header_lbl
+			width 215 px 
+            height 52 px
+            css font-size is "18px"
+            css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        media_centre_section_lbl:
+        	#aligned vertically left investor_relations_section_header_lbl
+        	css font-size is "16px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        media_centre_news_details-*:
+        @forEach [media_centre_news_details-*] as item, index as i
+        	${item}:
+        		css font-size is "16px"
+    			css font-family matches ".*DIN-Alternate, sans-serif*"
+		media_centre_tags-*:
+		@forEach [media_centre_tags-*] as item, index as i
+			${item}:
+				#text is "${media_centre_tags_text[i-1]}"
+				css font-size is "12.8px"
+				css font-family matches ".*DIN-Regular, sans-serif*"
+		#media_arrow_button:
+			#aligned vertically left media_centre_news_details 
+= Home Who We Are Section =
+  #This is for Mobile
+	@on mobile
+    	media_centre_ellipsis_text:
+			#text singleline is "Majid Al Futtaim is one of the leading drivers of economic growth and impact in the Middle East and North Africa and is a leading foreign direct investor and a catalyst for the region's economy."
+			css font-size is "14px"
+			css font-family matches ".*DIN-Alternate, sans-serif*" 
+		media_centre_section_header_lbl:
+			css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		media_centre_social_title:
+			css font-size is "14px"
+    		css font-family matches ".*DIN-Regular, sans-serif*"
+		media_centre_news_details-*:
+		@forEach [media_centre_news_details-*] as item, index as i
+			${item}:
+				css font-size is "12px"
+    			css font-family matches ".*DIN-Alternate, sans-serif*"
+		media_centre_explore_button:
+			#aligned vertically left people_and_careers_section_header_lbl
+			width 408 px 
+            height 52 px
+        media_centre_section_lbl:
+        	#aligned vertically left people_and_careers_section_header_lbl
+        	css font-size is "12px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_investor_relations_img_desktop:
+			absent
+		media_centre_tags-*:
+		@forEach [media_centre_tags-*] as item, index as i
+			${item}:
+				#text is "${media_centre_tags_text[i-1]}"
+				css font-size is "12.8px"
+				css font-family matches ".*DIN-Regular, sans-serif*"
+		#media_arrow_button:
+			#aligned vertically left media_centre_news_details		

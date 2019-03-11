@@ -1,0 +1,32 @@
+#Declaring objects with css and xpath locators
+@objects
+  contact_us_hero_img_desktop	xpath	//*[contains(@src,'contactusspotlight.jpg')]
+  contact_us_hero_img_mobile	xpath	//*[contains(@src,'contactusspotlight.jpg')]
+  hero_img_text xpath (//*[contains(@src,'contactusspotlight.jpg')]//following::h1)[1]
+= Journey So Far Hero Image Section Desktop =
+  #This is for Desktop
+	@on desktop
+    	contact_us_hero_img_desktop:
+    		width 1333 px
+			height 608 px
+		hero_img_text:
+			text singleline is "Get in Touch" 
+			css font-size is "80px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside contact_us_hero_img_desktop
+
+
+			
+= Journey So Far Hero Image Section Mobile =
+  #This is for Mobile
+	@on mobile
+    	contact_us_hero_img_mobile:
+    		width 448 px 
+			height 795 px
+		hero_img_text:
+			text singleline is "Get in Touch" 
+			css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside contact_us_hero_img_mobile
+
+			

@@ -1,0 +1,54 @@
+#Declaring objects with css and xpath locators
+@objects
+  home_who_we_are_img_desktop	xpath	(//*[@alt='homepagethejourneysofar'])[1]
+  home_who_we_are_img_mobile	xpath	(//*[@alt='homepagethejourneysofar'])[2]
+  journy_so_far_lbl		xpath	//*[@class='section-heading']//child::*[text()='The Journey So Far']
+  journy_so_far_para	xpath	(//*[@class='bullet-points-section'])[1]
+  explore_the_journey_button	xpath	//*[text()='Explore The Journey']
+  who_we_are_section_lbl	xpath	//*[@class='section-name']//*[text()='Who we are']
+  home_who_we_are_carousal_img	xpath	(//*[text()='Explore The Journey']//following::*[@class='home-what-we-do'])[2]
+
+= Home Who We Are Section =
+  #This is for Desktop
+	@on desktop
+    	journy_so_far_para:
+			text is "In our quest to create great moments for everyone, everyday, Majid Al Futtaim has enabled happiness in the lives of people from around the world. Find out more about what we do." 
+		home_who_we_are_img_desktop:
+			image file home_who_we_are_section_desktop.png, error 4000
+		journy_so_far_lbl:
+			css font-size is "65.7px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		explore_the_journey_button:
+			aligned vertically left journy_so_far_lbl
+			width 216 px 
+            height 60 px
+        who_we_are_section_lbl:
+        	aligned vertically left journy_so_far_lbl
+        	css font-size is "16px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_who_we_are_carousal_img:
+			below home_who_we_are_img_desktop 89 px
+			width 1349 px
+			height 657 px
+= Home Who We Are Section =
+  #This is for Mobile
+	@on mobile
+    	journy_so_far_para:
+			text is "In our quest to create great moments for everyone, everyday, Majid Al Futtaim has enabled happiness in the lives of people from around the world. Find out more about what we do." 
+		home_who_we_are_img_mobile:
+			image file home_who_we_are_section_mobile.png
+		journy_so_far_lbl:
+			css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		explore_the_journey_button:
+			aligned vertically left journy_so_far_lbl
+			width 412 px 
+            height 52 px
+        who_we_are_section_lbl:
+        	aligned vertically left journy_so_far_lbl
+        	css font-size is "12px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_who_we_are_carousal_img:
+			below home_who_we_are_img_mobile 392 px
+			width 452 px
+			height 777 px

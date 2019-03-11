@@ -1,0 +1,55 @@
+#Declaring objects with css and xpath locators
+@objects
+  who_we_are_Vision_and_Values_Image	xpath	//*[contains(@src,'who_we_are_great_moments.jpg')]
+  Vision_and_Values_Section_header_text xpath (//*[contains(@src,'who_we_are_great_moments.jpg')]//following::h2)[1]
+  Vision_and_Values_Section_para_text xpath (//*[contains(@src,'who_we_are_great_moments.jpg')]//following::p)[1]//parent::div
+  Vision_and_values_explore_button	xpath	//*[text()='Explore More']
+
+= Who We Are Vision & Values Section =
+  #This is for Desktop
+	@on desktop
+    	Vision_and_Values_Section_para_text:
+			#text singleline is "Across our operations, we create innovative brands, destinations and spaces that burst with ingenuity. We strive to incubate happiness by creating great moments for everyone, everyday. This was the vision of our founder, Majid Al Futtaim, which is as relevant today as it was over 25 years ago."
+			css font-size is "16px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		below Vision_and_Values_Section_header_text 24px
+    		right-of who_we_are_Vision_and_Values_Image 65px
+		who_we_are_Vision_and_Values_Image:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 454 px 
+            height 580 px
+		Vision_and_Values_Section_header_text:
+			text singleline is "Vision & Values" 
+			css font-size is "80px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		right-of who_we_are_Vision_and_Values_Image 65px
+    		aligned vertically left Vision_and_Values_Section_para_text
+		Vision_and_values_explore_button:
+			width 199 px
+			height 52 px
+			right-of who_we_are_Vision_and_Values_Image 65px
+= Who We Are Vision & Values Section =
+  #This is for Mobile
+	@on mobile
+    	Vision_and_Values_Section_para_text:
+    		#text singleline is "Across our operations, we create innovative brands, destinations and spaces that burst with ingenuity. We strive to incubate happiness by creating great moments for everyone, everyday. This was the vision of our founder, Majid Al Futtaim, which is as relevant today as it was over 25 years ago."
+    		css font-size is "14px"
+    		css font-family matches ".*DIN-Alternate, sans-serif*"
+    		below Vision_and_Values_Section_header_text 20px
+		who_we_are_Vision_and_Values_Image:
+			#image file home_who_we_are_section_mobile.png
+			width 408 px
+			height 522 px
+			aligned vertically left Vision_and_Values_Section_header_text
+			aligned vertically left Vision_and_Values_Section_para_text
+			aligned vertically all Vision_and_values_explore_button
+        Vision_and_Values_Section_header_text:
+    		text singleline is "Vision & Values"
+    		css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		below who_we_are_Vision_and_Values_Image 30px
+		Vision_and_values_explore_button:
+			width 408 px
+			height 52 px
+			below Vision_and_Values_Section_para_text 30px
+

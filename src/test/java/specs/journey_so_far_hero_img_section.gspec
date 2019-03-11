@@ -1,0 +1,57 @@
+#Declaring objects with css and xpath locators
+@objects
+  journey_so_far_hero_img_desktop	xpath	//*[contains(@src,'1.jpg')]
+  journey_so_far_hero_img_mobile	xpath	//*[contains(@src,'1.jpg')]
+  hero_img_text	xpath	(//*[@data-section-name='The Journey So Far']//following::h1)[1]
+  explore_video_text	xpath	(//*[@data-video-type='external']//child::span)[1]
+  journey_so_far_time_line_items-*	xpath	//*[@class='dot']//ancestor::a
+  journey_so_far_section_para	xpath	(//*[@data-aos='fade-up']//following-sibling::p)[1]
+@script
+	timeline_items_text = ["THE JOURNEY SO FAR", "1995", "2000", "2005", "2010", "2018"];
+
+= Journey So Far Hero Image Section Desktop =
+  #This is for Desktop
+	@on desktop
+    	journey_so_far_hero_img_desktop:
+    		width 1333 px
+			height 608 px
+		hero_img_text:
+			text singleline is "Our Journey" 
+			css font-size is "80px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside journey_so_far_hero_img_desktop
+		explore_video_text:
+			text singleline is "EXPLORE VIDEO" 
+			css font-size is "11px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside journey_so_far_hero_img_desktop
+		@forEach [journey_so_far_time_line_items-*] as item, index as i
+        	${item}:
+            	#text is "${timeline_items_text[i-1]}"
+            	inside journey_so_far_hero_img_desktop
+    	#journey_so_far_section_para:
+    		#css font-size is "11px"
+    		#css font-family matches ".*MarselisPro-Bold, sans-serif*"
+
+			
+= Journey So Far Hero Image Section Mobile =
+  #This is for Mobile
+	@on mobile
+    	journey_so_far_hero_img_mobile:
+    		width 448 px 
+			height 795 px
+		hero_img_text:
+			text singleline is "Our Journey" 
+			css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside journey_so_far_hero_img_mobile
+		explore_video_text:
+			text singleline is "EXPLORE VIDEO" 
+			css font-size is "11px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside journey_so_far_hero_img_mobile
+		@forEach [journey_so_far_time_line_items-*] as item, index as i
+        	${item}:
+            	#text is "${timeline_items_text[i-1]}"
+            	absent
+			

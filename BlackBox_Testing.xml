@@ -1,0 +1,182 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Barneys_Dev" preserve-order="true" parallel="methods" thread-count="1">
+
+   <listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="actions.TestNGCustom" />
+	<listener class-name="actions.CustomReporter" />  
+		<listener class-name="actions.BaseListener" />
+		 <listener class-name="atu.testng.reports.listeners.ATUReportsListener" />
+		<listener class-name="atu.testng.reports.listeners.ConfigurationListener" />
+		<listener class-name="atu.testng.reports.listeners.MethodListener" />
+	</listeners>
+
+ 
+ 	<test name="HomePage" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/"/>
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />
+
+		<groups>
+			<run>
+				<include name="Before_Method" />
+				<include name="BlackBox" />
+				<include name="After_Method" />
+			</run>
+		</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_HomePageTestCase" />
+		</classes>
+	</test> 
+	
+	<test name="LoginRegister" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/" />
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />
+
+		<groups>
+			<run>
+				<include name="Before_Method" />
+				<include name="BlackBox" />
+				<include name="After_Method" />
+			</run>
+		</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_LoginRegisterTestCase" />
+		</classes>
+	</test>
+ 	
+	<test name="Search" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/" />
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />	
+
+		<groups>
+			<run>
+				<include name="Before_Method" />
+				<include name="BlackBox" />
+				<include name="After_Method" />
+			</run>
+		</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_SearchTestCases" />
+		</classes>
+	</test> 
+
+	<test name="MyAccount" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/" />
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />			
+			<groups>
+				<run>
+					<include name="Before_Method" />
+					<include name="BlackBox1" />
+					<include name="After_Method" />
+				</run>
+			</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_MyAccountTestCase" />
+		</classes>
+	</test>
+
+
+
+		<test name="PDP" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/" />
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />	
+		<parameter name="PRODUCTURL" value="product/off-white-c-2fo-virgil-abloh-striped-cotton-open-back-shirt-504980326.html" />
+
+			<groups>
+			<run>
+				<include name="Before_Method" />
+				<include name="BlackBox1" />
+				<include name="After_Method" />
+			</run>
+		</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_PDPTestCases" />
+		</classes>
+	</test>
+	
+	 <test name="My Favorites" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/" />
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />		
+			<groups>
+			<run>
+				<include name="Before_Method" />
+				<include name="BlackBox" />
+				<include name="After_Method" />
+			</run>
+		</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_MyFavoritesTestCases" />
+		</classes>
+	</test>
+	
+	<test name="Editorial" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/" />
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />		
+
+			<groups>
+			<run>
+				<include name="Before_Method" />
+				<include name="BlackBox" />
+				<include name="After_Method" />
+			</run>
+		</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_EditorialTestCase" />
+		</classes>
+
+	</test> 
+
+	<test name="Cart_Page" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/" />
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />	
+		<groups>
+			<run>
+				<include name="Before_Method" />
+				<include name="BlackBox" />
+				<include name="After_Method" />
+			</run>
+		</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_CartPageTestCase" />
+		</classes>
+	</test>
+
+
+	<test name="Shipping" preserve-order="true" >
+		<parameter name="DEVICE" value="Desktop" />
+		<parameter name="BROWSER" value="CH" />
+		<parameter name="BNYURL" value="http://storefront:barneys@staging.barneys.com/" />
+		<parameter name="WHSURL" value="http://storefront:barneys@staging.barneyswarehouse.com/" />		
+
+			<groups>
+			<run>
+				<include name="Before_Method" />
+				<include name="BlackBox" />
+				<include name="After_Method" />
+			</run>
+		</groups>
+		<classes>
+		<class name="testCases.Functional.desktop.Desk_ShippingTestCases" />
+		</classes>
+
+	</test> 
+
+
+</suite>

@@ -1,0 +1,122 @@
+@import header.gspec
+@import footer.gspec
+#Declaring objects with css and xpath locators
+@objects
+  
+  menu_icon_mobile				xpath		//*[@class='menu-icon']
+  video_container				xpath	//*[@id='video-even']
+  clock_container				xpath	//*[@id='dial-main']  
+  home_page_logo              xpath     (//*[@class='logo']//following::img)[1]
+  menu_bar			xpath		//*[@class='header-nav-menu']
+  menu_bar_items-*		xpath		//*[@class='header-menu']
+  time_dial_hot_spot_items-*	xpath		//*[contains(@id,'hotspot') and @fill='white']
+  home_page_dial_text	xpath	//*[@id='dial-content-text']
+  home_page_dial_explore_button	xpath	//*[@id='explore']
+  time_dial_all_hot_spot_items-*	xpath	//*[contains(@id,'dash-click') and @data-button-text='Explore the journey']
+  time_dial_hot_spot_text_mobile	xpath	//*[@id='mob-hotspot-text']//child::span
+  mobile_arrow_indicator	xpath	//*[@class='scroll-indicator']//child::span
+
+@groups
+	menu_bar_links	who_we_are_link,what_we_do_link,people_and_careers,the_leadership_institute,investor_relations,media_centre
+@script
+	menu_bar_items_text = ["WHO WE ARE", "WHAT WE DO", "PEOPLE & CAREERS", "THE LEADERSHIP INSTITUTE", "INVESTOR RELATIONS", "MEDIA CENTRE"];
+@script
+	time_dial_hot_spot_text = ["Morning", "Mid-day", "Afternoon", "Evening"];
+
+
+#Home Page Tag
+= Home Page =
+  #This is for Desktop
+	@on desktop
+      
+		menu_icon_mobile:
+			absent
+		menu_bar:
+			width 991 px 
+			height 70 to 80 px
+			below header 0px
+	    video_container:
+			width 1333 px 
+			height 680 px 
+		clock_container:
+			inside	video_container
+			width 498 px
+			height 504 px 
+		#Logo properties
+		home_page_logo:
+            width 165px 
+			height 33px 
+			below header 15px
+			image file maf_logo_desktop.png, error 5000 px
+			left-of menu_bar 10 px
+		home_page_dial_text:
+			css font-size is "28px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_page_dial_explore_button:
+			inside clock_container
+			css font-size is "18px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*"
+			width 233 px
+			height 48 px
+		menu_bar_items-*:
+		@forEach [menu_bar_items-*] as item, index as i
+			${item}:
+				text is "${menu_bar_items_text[i-1]}"
+				css font-size is "16px"
+				css font-family matches ".*DIN-Alternate, sans-serif*"
+				inside menu_bar
+		@forEach [time_dial_hot_spot_items-*] as item, index as i
+			${item}:
+				text is "${time_dial_hot_spot_text[i-1]}"
+				css font-size is "1.8px"
+				css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		menu_bar_items-1:
+			aligned horizontally all menu_bar_items-2
+			aligned horizontally all menu_bar_items-3
+			aligned horizontally all menu_bar_items-4
+			aligned horizontally all menu_bar_items-5
+			aligned horizontally all menu_bar_items-6
+		time_dial_all_hot_spot_items-*:
+			count any time_dial_all_hot_spot_items-* is 24 
+
+	
+   
+	@on mobile
+		
+		video_container:
+			width 448 px 
+			height 700 px 
+		clock_container:
+			width 408 px 
+			height 414 px 
+		#Logo properties
+		home_page_logo:
+			image file maf_logo_mobile.png, error 5000 px
+			aligned horizontally bottom header_search_icon_mobile 5px
+			aligned horizontally bottom menu_icon_mobile 5px
+		home_page_dial_text:
+			css font-size is "28px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_page_dial_explore_button:
+			inside clock_container
+			width 286 px
+			height 44 px
+			css font-size is "11px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		time_dial_hot_spot_items-*:
+			absent
+		time_dial_all_hot_spot_items-*:
+			count any time_dial_all_hot_spot_items-* is 24
+		time_dial_hot_spot_text_mobile:
+			css font-size is "12px"
+			css font-family matches ".*MarselisPro, sans-serif*"
+			inside clock_container
+		mobile_arrow_indicator:
+			width 11px
+			height 11px
+			#below home_page_dial_explore_button 227px 
+			
+		
+       
+
+			

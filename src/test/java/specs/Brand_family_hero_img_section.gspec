@@ -1,0 +1,107 @@
+#Declaring objects with css and xpath locators
+#@import footer.gspec
+@objects
+  brand_family_hero_img_desktop	xpath	(//*[@id='dial-brands-main']//ancestor::div)[position()=2]
+  brand_family_hero_img_mobile	xpath	(//*[@id='dial-brands-main']//ancestor::div)[position()=2]
+  dail_industries_labels-*	xpath	(//*[contains(@id,'txt-')])[position()<12]
+  dail_center_text	xpath	//*[@id='c-text']
+  dail_view_all_brands_links	xpath	//*[@id='view-all-brands']//child::a
+  dial_view_all_industries_links	xpath	//*[@id='view-all-industries']//child::a
+  dial_our_industries_text	xpath	//*[@id='our-industries']//child::span
+  brand_family_dail_circles-*	xpath	//*[contains(@class,'cat-circle-group')]
+  brand_family_main_dail	xpath	(//*[contains(@class,'brands-dial-container')]//child::div)[1]
+  footer		xpath		//*[@class='footer-content']//ancestor::footer
+@script
+	dail_industries_labels_text = ["COMMUNITIES", "SHOPPING MALLS", "HOTELS", "HYPERMARKETS", "FASHION", "CINEMA","ENTERTAINMENT","CONSUMER FINANCE","PROJECT MANAGEMENT","ENERGY & FACILITIES MANAGEMENT","FOOD & BEVERAGE"];
+
+= Brand Family Hero Image Section =
+  #This is for Desktop
+	@on desktop
+    	dail_industries_labels-*:
+		@forEach [dail_industries_labels-*] as item, index as i
+			${item}:
+    			text is "${dail_industries_labels_text[i-1]}"
+    			css font-size is "1.55px"
+    			css font-family matches ".*MarselisPro*"
+    			inside brand_family_hero_img_desktop
+		dail_industries_labels-*:
+			count any dail_industries_labels-* is 11 
+		brand_family_hero_img_desktop:
+			#image file home_who_we_are_section_desktop.png, error 12000
+			width 1333 px 
+            height 680 px
+		dail_center_text:
+			#text singleline is "Impact Stories" 
+			css font-size is "32px"
+			css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside brand_family_hero_img_desktop
+    		#aligned vertically left hero_img_para_text
+		dail_view_all_brands_links:
+			text singleline is "VIEW BRANDS LIST" 
+			css font-size is "10px"
+			css font-family matches ".*MarselisPro, sans-serif*"
+    		inside brand_family_hero_img_desktop
+    		#aligned vertically left hero_img_para_text
+		footer:
+			below brand_family_hero_img_desktop 0 px
+		brand_family_dail_circles-*:
+			width 67 to 68 px
+			height 67 to 68 px
+		brand_family_main_dail:
+			width 680 px
+			height 680 px
+			inside screen 326 px left
+			inside screen 327 px right  	
+= Brand Family Hero Image Section =
+  #This is for Mobile
+	@on mobile
+    	#dail_industries_labels-*:
+    	#@forEach [dail_industries_labels-*] as item, index as i
+			#${item}:
+    			#text is "${dail_industries_labels_text[i-1]}"
+    			#css font-size is "1.55px"
+    			#css font-family matches ".*MarselisPro*"
+    			#inside brand_family_hero_img_desktop
+		#dail_industries_labels-*:
+			#count any dail_industries_labels-* is 11
+		brand_family_hero_img_mobile:
+			#image file home_who_we_are_section_mobile.png
+			width 448 px
+			height 700 px
+        dail_center_text:
+    		#text singleline is "Impact Stories"
+    		css font-size is "22px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+    		inside brand_family_hero_img_mobile
+		dial_view_all_industries_links:
+			text singleline is "VIEW BRANDS LIST"
+			css font-size is "10px"
+			css font-family matches ".*MarselisPro, sans-serif*"
+			inside brand_family_hero_img_mobile
+		dail_industries_labels-*:
+		@forEach [dail_industries_labels-*] as item, index as i
+			${item}:
+				text is "${dail_industries_labels_text[i-1]}"
+				css font-size is "1.55px"
+				css font-family matches ".*MarselisPro*"
+				inside brand_family_hero_img_mobile
+		dail_industries_labels-*:
+			count any dail_industries_labels-* is 11
+		dail_view_all_brands_links:
+			absent
+		dial_our_industries_text:
+			text singleline is "OUR INDUSTRIES"
+			css font-size is "11px"
+			css font-family matches ".*MarselisPro, sans-serif*"
+			inside brand_family_hero_img_mobile
+		footer:
+			below brand_family_hero_img_mobile 0 px
+		brand_family_dail_circles-*:
+			width 62 px
+			height 62 px
+		brand_family_main_dail:
+			width 448 px
+			height 518 px
+			inside screen 0 px left
+			inside screen 0 px right
+

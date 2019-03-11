@@ -1,0 +1,62 @@
+#Declaring objects with css and xpath locators
+@objects
+  header				xpath	//*[@class='top-header-menu']
+  header_search_icon_desktop			xpath    //*[@class='top-header-links']//following::img[position()=1 and @alt='search icon']
+  header_search_icon_mobile			xpath		(//*[@alt='search icon'])[3]
+  header_contact_us			xpath    (//*[text()='Contact Us'])[2]
+  header_small_text			xpath   //*[text()='Contact Us']//following::*[@class='small-text']
+  header_items-*			xpath    //*[@class='top-header-links']//child::a
+  header_main_links-*	xpath	//*[@class='header-menu']//child::a[@class='menu-item ']
+  header_logo_image	xpath	(//*[@class='logo']//following::img)[1]
+
+@script
+	header_main_link_text = ["WHO WE ARE", "WHAT WE DO", "PEOPLE & CAREERS", "THE LEADERSHIP INSTITUTE", "INVESTOR RELATIONS", "MEDIA CENTRE"];
+
+#Home Page Tag
+= Home Page =
+  #This is for Desktop
+	@on desktop
+       #Header properties
+		header:
+			inside screen 78px top
+			inside screen 0px left
+			inside screen 0px right
+			width 1333 px
+			height 31 px
+		header_logo_image:
+			image file header_logo_desktop.png, error 5000 px
+			left-of header_main_links-1 136 px
+			width 165 px
+			height 33 px
+		menu_icon_mobile:
+			absent
+		header_search_icon_desktop,header_items-*:
+			inside header
+		@forEach [header_main_links-*] as item, index as i
+        	${item}:
+            	text is "${header_main_link_text[i-1]}"
+            	below header 0 px
+            	css font-size is "11px"
+    		    css font-family matches ".*MarselisPro-Bold, sans-serifs*"
+    	header_main_links-1:
+			aligned horizontally all header_main_links-2
+			aligned horizontally all header_main_links-3
+			aligned horizontally all header_main_links-4
+			aligned horizontally all header_main_links-5
+			aligned horizontally all header_main_links-6
+		header_main_links-*:
+			count any header_main_links-* is 6
+	@on mobile
+		#Header properties
+		header:
+			absent
+		header_logo_image:
+			image file header_logo_mobile.png, error 5000 px
+		header_search_icon_mobile:
+			width 22 px 
+			height 21 px
+		header_search_icon_desktop:
+			absent
+		
+	
+       

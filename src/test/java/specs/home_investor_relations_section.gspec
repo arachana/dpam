@@ -1,0 +1,61 @@
+#Declaring objects with css and xpath locators
+@objects
+  home_investor_relations_img_desktop	xpath	//*[contains(@src,'homepage_investor_relations.jpg')]
+  home_investor_relations_img_mobile	xpath	//*[contains(@src,'homepage_investor_relations.jpg')]
+  investor_relations_section_header_lbl		xpath	//*[@class='section-heading']//child::*[contains(text(),'Build Our Future Together')]
+  investor_relations_para	xpath	(//*[@class='bullet-points-section'])[3]
+  investor_relations_explore_button	xpath	//*[text()='Find Out More']
+  investor_relations_section_lbl	xpath	//*[@class='section-name']//*[text()='Investor Relations']
+ 
+
+= Home Who We Are Section =
+  #This is for Desktop
+	@on desktop
+    	investor_relations_para:
+			#text singleline is "Majid Al Futtaim is one of the leading drivers of economic growth and impact in the Middle East and North Africa and is a leading foreign direct investor and a catalystfor the region’s economy."
+			css font-size is "16px"
+			css font-family matches ".*DIN-Alternate, sans-serif*" 
+		investor_relations_section_header_lbl:
+			css font-size is "80px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		investor_relations_explore_button:
+			#aligned vertically left people_and_careers_section_header_lbl
+			width 209 px 
+            height 52 px
+            css font-size is "18px"
+            css font-family matches ".*MarselisPro-Bold, sans-serif*"
+        investor_relations_section_lbl:
+        	aligned vertically left investor_relations_section_header_lbl
+        	css font-size is "16px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_investor_relations_img_desktop:
+			near investor_relations_para 65 px left
+			near investor_relations_section_header_lbl 65 px left
+			near investor_relations_explore_button 65 px left
+			width 454 px 
+            height 580 px
+= Home Who We Are Section =
+  #This is for Mobile
+	@on mobile
+    	investor_relations_para:
+			#text singleline is "Majid Al Futtaim is one of the leading drivers of economic growth and impact in the Middle East and North Africa and is a leading foreign direct investor and a catalystfor the region’s economy."
+			css font-size is "14px"
+			css font-family matches ".*DIN-Alternate, sans-serif*"
+		home_investor_relations_img_mobile:
+			#image file home_people_and_careers_section_mobile.png, error 500px
+			width 408 px
+			height 522 px
+			near investor_relations_section_lbl 33 px top 
+		investor_relations_section_header_lbl:
+			css font-size is "36px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		investor_relations_explore_button:
+			#aligned vertically left people_and_careers_section_header_lbl
+			width 408 px 
+            height 52 px
+        investor_relations_section_lbl:
+        	#aligned vertically left people_and_careers_section_header_lbl
+        	css font-size is "12px"
+    		css font-family matches ".*MarselisPro-Bold, sans-serif*"
+		home_investor_relations_img_desktop:
+			#absent

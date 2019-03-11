@@ -1,0 +1,106 @@
+#Declaring objects with css and xpath locators
+@objects
+  
+  journey_so_far_2000_images-* xpath (//*[@class='company-icon']//img)[position()>3 and position()<7]
+  journey_so_far_2000_years-* xpath (//*[@class='company-year'])[position()<4]
+  journey_so_far_2000_images_content-* xpath (//*[@class='company-desc'])[position()>3 and position()<7]
+  journey_so_far_2000_main_image_desktop  xpath //*[text()='Mall of the Emirates']//preceding::img[position()=1]
+  journey_so_far_2000_main_image_mobile  xpath //*[text()='Mall of the Emirates']//preceding::img[position()=1]
+  journey_so_far_2000_main_image_hading xpath //*[text()='Mall of the Emirates']
+  journey_so_far_2000_main_image_text_content xpath //*[text()='Mall of the Emirates']//preceding::img[position()=1]//following::h2[position()=1]//following::div[position()=1]
+  journey_so_far_2000_explore_video_button  xpath //*[@class='explore-video-btn']
+  journey_so_far_2000_lbl-* xpath (//*[@class='lines']//child::span)[position()>4 and position()<9]
+  journey_so_far_2000_vox_logo  xpath //*[@alt='Vox']
+  journey_so_far_2000_vox_logo_text  xpath //*[@alt='Vox']//following::p[position()=1]
+= Journey So Far 2000 Section Desktop =
+  #This is for Desktop
+	@on desktop
+      journey_so_far_2000_images-*:
+        width 150 px
+        height 90 px
+      journey_so_far_2000_images-1:
+        aligned horizontally bottom journey_so_far_2000_images-2
+        aligned horizontally bottom journey_so_far_2000_images-3
+      journey_so_far_2000_years-*:
+        css font-size is "34px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2000_years-1:
+        aligned horizontally all journey_so_far_2000_years-2
+        aligned horizontally all journey_so_far_2000_years-3 
+      journey_so_far_2000_images_content-*:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_2000_images_content-1:
+        aligned horizontally top journey_so_far_2000_images_content-2
+        aligned horizontally top journey_so_far_2000_images_content-3
+      journey_so_far_2000_main_image_desktop:
+        width 454 px
+        height 580 px
+      journey_so_far_2000_main_image_hading:
+        css font-size is "80px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2000_main_image_text_content:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_2000_explore_video_button:
+        width 200 px
+        height 200 px
+        text is "EXPLORE VIDEO"
+      #journey_so_far_2000_lbl-*:
+        #css font-size is "52px"
+        #css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2000_vox_logo:
+        width 150 px
+        height 150 px
+        inside screen 591px left
+        inside screen 592px right
+      journey_so_far_2000_vox_logo_text:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+        text is "VOX Cinemas, the UAE's 1st multiplex cinema launches"
+        inside screen 381px left
+        inside screen 383px right
+= Journey So Far 2000 Section Mobile =
+  #This is for Mobile
+	@on mobile
+	  journey_so_far_2000_images-*:
+        width 150 px
+        height 90 px
+      journey_so_far_2000_years-*:
+        css font-size is "34px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2000_years-1:
+        aligned vertically all journey_so_far_2000_years-2
+        aligned vertically all journey_so_far_2000_years-3 
+	  journey_so_far_2000_images_content-*:
+        css font-size is "16px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_2000_main_image_mobile:
+        width 408 px
+        height 522 px
+      journey_so_far_2000_main_image_hading:
+        css font-size is "36px"
+        css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2000_main_image_text_content:
+        css font-size is "14px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+      journey_so_far_2000_explore_video_button:
+        width 163 px
+        height 139 px
+        text is "EXPLORE VIDEO"
+      #journey_so_far_2000_lbl-*:
+        #css font-size is "52px"
+        #css font-family matches ".*MarselisPro-Bold, sans-serif*"
+      journey_so_far_2000_vox_logo:
+        width 150 px
+        height 150 px
+        inside screen 149px left
+        inside screen 149px right
+      journey_so_far_2000_vox_logo_text:
+        css font-size is "14px"
+        css font-family matches ".*DIN-Alternate, sans-serif*"
+        text is "VOX Cinemas, the UAE's 1st multiplex cinema launches"
+        inside screen 20px left
+        inside screen 20px right   
+
+			
